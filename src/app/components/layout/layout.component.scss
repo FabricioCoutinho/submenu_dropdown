@@ -1,0 +1,19 @@
+@import 'vars';
+
+.app-container {
+  min-width: 1024px;
+  overflow-x: auto;
+}
+
+.main-container {
+  height: 100vh;
+  overflow: auto;
+  flex: 1;
+
+  main {
+    height: calc(100vh - 72px);
+    overflow-y: auto;
+    padding-top: ($grid-gutter-width / 2);
+    padding-bottom: $grid-gutter-width;
+  }
+}

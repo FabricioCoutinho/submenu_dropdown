@@ -1,0 +1,50 @@
+<aside class="d-flex flex-column" [class.collapsed]="collapsed">
+  <header class="d-flex align-items-center justify-content-center">
+    <a routerLink="/">
+      <img [src]="logo" alt="Logo">
+    </a>
+  </header>
+
+  <nav class="list-group">
+
+    <ng-container>
+
+      <div class="list-group-item" >
+        <div class="geo-menu-arrow" (click)="collapsed ? toggleCollapse() : isConfiguracoesCollapsed = !isConfiguracoesCollapsed" [attr.aria-expanded]="!isConfiguracoesCollapsed">
+          <span *ngIf="showLabel" class="geo-arrow" [class.geo-arrow-down]="!isConfiguracoesCollapsed"></span>
+          <a>         
+            <span class="fas fa-cog fa-2x"></span>
+            <button class="btn btn-small"></button>
+            <span *ngIf="showLabel" class="ml-2" >SubMenu</span>
+          </a>
+        </div>
+        <div *ngIf="showLabel" [ngbCollapse]="isConfiguracoesCollapsed"> 
+          <a  [disableTooltip]="showLabel" placement="right" ngbTooltip="" routerLinkActive="active" class="submenu-item list-group-item list-group-item-action d-flex align-items-center ">
+            <span *ngIf="showLabel" class="ml-2">Item 1</span>
+          </a>
+
+          <a [disableTooltip]="showLabel" placement="right" ngbTooltip="" routerLinkActive="active" class="submenu-item list-group-item list-group-item-action d-flex align-items-center ">
+            <span *ngIf="showLabel" class="ml-2">Item 2</span>
+          </a>
+    
+          <a [disableTooltip]="showLabel" placement="right" ngbTooltip="" routerLinkActive="active" class="submenu-item list-group-item list-group-item-action d-flex align-items-center ">
+            <span *ngIf="showLabel" class="ml-2">Item 3</span>
+          </a>
+    
+          <a [disableTooltip]="showLabel" placement="right" ngbTooltip="" routerLinkActive="active" class="submenu-item list-group-item list-group-item-action d-flex align-items-center ">
+            <span *ngIf="showLabel" class="ml-2">Item 4</span>
+          </a>
+    
+
+        </div>
+      </div>
+     
+    </ng-container>
+  </nav>
+
+  <footer class="d-none d-xl-block align-items-center justify-content-center">
+    <button (click)="toggleCollapse()" class="btn btn-block btn-light btn-icon pr-4 justify-content-end">
+      <span class="fas fa-chevron-left fa-2x"></span>
+    </button>
+  </footer>
+</aside>
